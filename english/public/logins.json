@@ -1,0 +1,27 @@
+[
+    {
+        "login": "arkadii",
+        "password": 9181632716,
+        "greeting": "Аркадий Алексеевич"
+    },
+    {
+        "login": "ekaterina",
+        "password": 9002435991,
+        "greeting": "Екатерина Юрьевна"
+    },
+    {
+        "login": "aleksey",
+        "password": 9817346457,
+        "greeting": "Алексей Константинович"
+    },
+    {
+        "login": "evgeniya",
+        "password": 9530806270,
+        "greeting": "Евгения Александровна"
+    },
+    {
+        "login": "liliya",
+        "password": 9182322272,
+        "greeting": "Лилия Владимировна"
+    }
+]
