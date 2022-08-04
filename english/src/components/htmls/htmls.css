@@ -1,0 +1,33 @@
+.inp, inp:focus {
+    border: none;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    width: 150px;
+    outline: none;
+}
+
+.but {
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    border: 2px solid #524f4e;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: #A7C0CD;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+  }
+  .but:hover {
+    background: #506CF0;
+    box-shadow: 0 15px 20px #cbd3fa;
+    color: white;
+    transform: translateY(-7px);
+  }
