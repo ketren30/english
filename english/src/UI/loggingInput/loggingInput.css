@@ -1,0 +1,7 @@
+.input, input:focus {
+    border: none;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    width: 150px;
+    outline: none;
+}

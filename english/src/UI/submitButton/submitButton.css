@@ -1,12 +1,4 @@
-.inp, inp:focus {
-    border: none;
-    border-bottom: 1px solid grey;
-    height: 30px;
-    width: 150px;
-    outline: none;
-}
-
-.but {
+.button {
     text-decoration: none;
     width: 140px;
     height: 45px;
@@ -25,7 +17,7 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
   }
-  .but:hover {
+  .button:hover {
     background: #506CF0;
     box-shadow: 0 15px 20px #cbd3fa;
     color: white;

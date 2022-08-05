@@ -1,25 +1,26 @@
-interface User {
+export interface User {
     login: string,
     password: string,
     name: string,
     lastName: string,
-    id: number
+    id: number,
+    male: string
 }
-interface PotUser {
+ export interface PotUser {
     login: string,
     password: string
 }
 
 
-type LogState = {
+export type LogState = {
     users: User[],
     activeUser: User | undefined,
     isLogged: boolean
 } 
 
-type LogAction = {
+export type LogAction = {
     type: string;
     payload?: any 
 }
 
-type DispatchType = (args: LogAction) => LogAction
+ export type DispatchType = (args: LogAction) => LogAction

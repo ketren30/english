@@ -1,48 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { Inp } from '../htmls/inp';
-import { But } from '../htmls/but';
+import { LoggingInput } from '../../UI/loggingInput/loggingInput';
+import { SubmitButton } from '../../UI/submitButton/submitButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import { CheckUser } from '../../store/actionCreators';
+import * as types from '../../type';
+import {useNavigate} from 'react-router-dom';
 
-type Props = {
-    name?: string
-}
 
-export const Enter: React.FC<Props> = ({name}) => {
-    const [potencialUser, setPotencialUser] = useState<PotUser>({login: '', password: ''});
+export const Enter = () => {
+    const [potentialUserLogin, setPotentialUserLogin] = useState<string>('');
+    const [potentialUserPasswword, setPotentialUserPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
     const dispatch: Dispatch<any> = useDispatch();
-    const isLogged: boolean = useSelector((state: LogState)=> state.isLogged);
-    const loggedUser: User | undefined = useSelector((state: LogState) => state.activeUser);
+    const navigate = useNavigate();
+    const isLogged: boolean = useSelector((state: types.LogState)=> state.isLogged);
+    const loggedUser: types.User | undefined = useSelector((state: types.LogState) => state.activeUser);
     
-    const getUserLogin = (event: React.FormEvent<HTMLInputElement>) => {
-        const value:string = event.currentTarget.value;
-        setPotencialUser({...potencialUser, login: value}
-        );
+    const onLoginChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setPotentialUserLogin(event.currentTarget.value)
     }
-    const getUserPassword = (event: React.FormEvent<HTMLInputElement>) => {
-        const value:string = event.currentTarget.value;
-        setPotencialUser({...potencialUser, password: value}
-        );
+    const onPasswordChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setPotentialUserPassword(event.currentTarget.value)
     }
-    const onClickF = () => {
-        dispatch(CheckUser(potencialUser));
-        console.log(isLogged)
+
+    useEffect(()=> {
+        if (isLogged) setTimeout(()=> navigate('/'), 1500);
+    }, [isLogged]);
+
+    const onButtonClick = () => {
+        dispatch(CheckUser({login: potentialUserLogin, password: potentialUserPasswword}));
+        console.log(isLogged);
         if (!isLogged) setError("Логин или пароль неверны! Попытайтесь еще раз.")
-        else setError('')
-        console.log(error)
+        else { 
+            setError('');
+        }
     }
-    console.log(isLogged, loggedUser)
+    
     return (
         <div>
             {isLogged?
             <h3>Добро пожаловать, {loggedUser!.name +' '+ loggedUser!.lastName}</h3>
             :<div>
-                Введите логин: <Inp onChangeFunc={getUserLogin}/><p/>
-                Введите пароль: <Inp onChangeFunc={getUserPassword}/><p/>
-                <But text='Войти' onClickFunc={onClickF}/>
-                {error!=='' && <h3>{error}</h3>}
+                Введите логин: <LoggingInput onChangeFunction={onLoginChange}/><p/>
+                Введите пароль: <LoggingInput onChangeFunction={onPasswordChange}/><p/>
+                <SubmitButton text='Войти' onbuttonClick={onButtonClick}/>
+                {error!! && <h3>{error}</h3>}
             </div>}
         </div>
     )
