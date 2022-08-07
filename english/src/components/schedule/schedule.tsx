@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 interface Lesson {
     teacher: string
     level: string,
-    "number of students": number
+    numberOfStudents: number
 }
 interface Time {
     Monday: Lesson,
@@ -57,12 +57,19 @@ export const Schedule: React.FC = () => {
                 <tr>
                     <td colSpan={7}>{Object.keys(item)[0]}</td>
                 </tr>
-            console.log(Object.entries(item)[0])
-            /* for (var prop in Object.entries(item)[1]) {
+            const classRoom: any = (Object.entries(item)[0][1]);
+            for (var prop in classRoom) {
                 <tr>
-                    <td></td>
+                    <td>
+                        <td>{prop}</td>
+                        <td>
+                            Teacher: {classRoom.prop.Monday.teacher}<br/>
+                            Level: {classRoom.prop.Monday.level}<br/>
+                            Students: {classRoom.prop.Monday.numberOfStudents}
+                        </td>
+                    </td>
                 </tr>
-            } */
+            }
 
         })}
         </>
