@@ -28,6 +28,7 @@ interface Classroom {
 }
 export const Schedule: React.FC = () => {
         const [timetable, setTimetable] = useState<Classroom[]>([]);
+        //const [table, setTable] = useState<Element>();
         const [loading, setLoading] = useState<boolean>(false);
 
         const GetData = (link: string) => {
@@ -43,7 +44,7 @@ export const Schedule: React.FC = () => {
         console.log(timetable);
         }, []);
 
-        const table = 
+        const table=
         <table>
             <>
             <th>Time</th>
@@ -74,6 +75,7 @@ export const Schedule: React.FC = () => {
         })}
         </>
         </table>
+    
     return (
         <div>
             <>
