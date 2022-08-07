@@ -1,6 +1,6 @@
 [
     {"1st classroom": {
-        "9-00":{
+        "09-00":{
             "Monday": {
                 "teacher": "Лилия Владимировна",
                 "level": "Beginners",
@@ -248,9 +248,9 @@
                 "number of students": 3
             }
         }
-    },
-    "2nd classroom": {
-        "9-00":{
+    }},
+    {"2nd classroom": {
+        "09-00":{
             "Monday": {
                 "teacher": "Лилия Владимировна",
                 "level": "Beginners",
