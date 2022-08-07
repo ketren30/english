@@ -66,9 +66,7 @@ const logReducer = (
             });
             return state
         case logOut: 
-            state.activeUser = undefined;
-            state.isLogged = false;
-            return state
+            return {...state, activeUser: undefined, isLogged: false}
     }
     return state
 }

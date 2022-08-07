@@ -1,0 +1,502 @@
+[
+    {"1st classroom": {
+        "9-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 3
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 3
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 4
+            }
+        },
+        "10-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 3
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 3
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-Beginners",
+                "number of students": 2
+            }
+        },
+        "11-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Elementary",
+                "number of students": 4
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Elementary",
+                "number of students": 4
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-low-Beginners",
+                "number of students": 3
+            }
+        },
+        "12-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {},
+            "Thursday": {},
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Elementary",
+                "number of students": 1
+            }
+        },
+        "13-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {},
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            },
+            "Saturday": {}
+        },
+        "14-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "4-5 years",
+                "number of students": 4
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-low-Beginners",
+                "number of students": 3
+            }
+        },
+        "15-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Friday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            }
+        },
+        "16-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 5
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 3
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 5
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 3
+            },
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "5-6 years",
+                "number of students": 3
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "6-7 years",
+                "number of students": 3
+            }
+        },
+        "17-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 6
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 6
+            },
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "7 years",
+                "number of students": 5
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "7 years",
+                "number of students": 2
+            }
+        },
+        "18-00":{
+            "Monday": {},
+            "Tuesday": {
+                "teacher": "Евгения Александровна",
+                "level": "7 years",
+                "number of students": 2
+            },
+            "Wednesday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            },
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "1st form",
+                "number of students": 3
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "1st form",
+                "number of students": 3
+            }
+        }
+    },
+    "2nd classroom": {
+        "9-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 3
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 3
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 4
+            }
+        },
+        "10-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 3
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 3
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-Beginners",
+                "number of students": 2
+            }
+        },
+        "11-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Elementary",
+                "number of students": 4
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Elementary",
+                "number of students": 4
+            },
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-low-Beginners",
+                "number of students": 3
+            }
+        },
+        "12-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {},
+            "Thursday": {},
+            "Friday": {},
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Elementary",
+                "number of students": 1
+            }
+        },
+        "13-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {},
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            },
+            "Saturday": {}
+        },
+        "14-00":{
+            "Monday": {},
+            "Tuesday": {},
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Intermediate",
+                "number of students": 5
+            },
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "4-5 years",
+                "number of students": 4
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Low-low-Beginners",
+                "number of students": 3
+            }
+        },
+        "15-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Friday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Elementary",
+                "number of students": 5
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            }
+        },
+        "16-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 5
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 3
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Beginners",
+                "number of students": 5
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 3
+            },
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "5-6 years",
+                "number of students": 3
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "6-7 years",
+                "number of students": 3
+            }
+        },
+        "17-00":{
+            "Monday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Tuesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 6
+            },
+            "Wednesday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Low-Beginners",
+                "number of students": 4
+            },
+            "Thursday": {
+                "teacher": "Лилия Владимировна",
+                "level": "Pre-Intermediate",
+                "number of students": 6
+            },
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "7 years",
+                "number of students": 5
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "7 years",
+                "number of students": 2
+            }
+        },
+        "18-00":{
+            "Monday": {},
+            "Tuesday": {
+                "teacher": "Евгения Александровна",
+                "level": "7 years",
+                "number of students": 2
+            },
+            "Wednesday": {
+                "teacher": "Евгения Александровна",
+                "level": "Beginners",
+                "number of students": 1
+            },
+            "Thursday": {},
+            "Friday": {
+                "teacher": "Алексей Константинович",
+                "level": "1st form",
+                "number of students": 3
+            },
+            "Saturday": {
+                "teacher": "Евгения Александровна",
+                "level": "1st form",
+                "number of students": 3
+            }
+        }
+    }}
+]
