@@ -10,7 +10,10 @@ export interface User {
     login: string,
     password: string
 }
-
+export interface MainState {
+    logging: LogState,
+    schedule: ScheduleState
+}
 
 export type LogState = {
     users: User[],
@@ -18,9 +21,35 @@ export type LogState = {
     isLogged: boolean
 } 
 
-export type LogAction = {
+export type ScheduleState = {
+    timetable: Classroom[],
+    loading: boolean,
+    isVisible: boolean
+}
+
+export type MainAction = {
     type: string;
     payload?: any 
 }
 
- export type DispatchType = (args: LogAction) => LogAction
+export interface Lesson {
+    teacher: string
+    level: string,
+    numberOfStudents: number,
+    groupID: number
+}
+
+export interface Classroom {
+    "09-00": Lesson[],
+    "10-00": Lesson[],
+    "11-00": Lesson[],
+    "12-00": Lesson[],
+    "13-00": Lesson[],
+    "14-00": Lesson[],
+    "15-00": Lesson[],
+    "16-00": Lesson[],
+    "17-00": Lesson[],
+    "18-00": Lesson[],
+}
+
+ export type DispatchType = (args: MainAction) => MainAction

@@ -52,7 +52,7 @@ const initialState: types.LogState = {
 
 const logReducer = (
     state: types.LogState = initialState,
-    action: types.LogAction
+    action: types.MainAction
 ): types.LogState => {
     switch (action.type) {
         case checkUser:

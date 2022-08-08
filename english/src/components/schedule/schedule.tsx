@@ -1,46 +1,20 @@
-import { time } from 'console';
 import React, { useEffect, useState } from 'react';
-import { isEmptyBindingElement } from 'typescript';
 import './schedule.css';
+import { Lesson, Classroom, DispatchType, ScheduleState } from '../../type';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchData } from '../../store/actionCreators';
 
-interface Lesson {
-    teacher: string
-    level: string,
-    numberOfStudents: number
-}
 
-interface Classroom {
-    "09-00": Lesson[],
-    "10-00": Lesson[],
-    "11-00": Lesson[],
-    "12-00": Lesson[],
-    "13-00": Lesson[],
-    "14-00": Lesson[],
-    "15-00": Lesson[],
-    "16-00": Lesson[],
-    "17-00": Lesson[],
-    "18-00": Lesson[],
-}
 export const Schedule: React.FC = () => {
-        const [timetable, setTimetable] = useState<Classroom[]>([]);
-        //const [table, setTable] = useState<Element>();
-        const [loading, setLoading] = useState<boolean>(false);
+        const dispatch: DispatchType = useDispatch();
+        const loading = useSelector((state: ScheduleState)=> state.loading);
+        const timetable = useSelector((state: ScheduleState)=> state.timetable);
 
-        const GetData = (link: string) => {
-            setLoading(true);
-            fetch(link)
-            .then((res) => {return res.json().then((result)=> {
-              setTimetable(result); console.log(result);
-              setTimeout(()=>setLoading(false), 1500);
-            })})
-          };
         useEffect(()=>{
-        GetData('https://raw.githubusercontent.com/ketren30/english/main/english/src/components/schedule/schedule.json');
-        console.log(timetable);
-        }, []);
+            dispatch(FetchData()); 
+        }, [dispatch]);
 
-        
-    
+            
     return <>
         <div>
             {loading && <h3>Loading...</h3>}
@@ -72,7 +46,8 @@ export const Schedule: React.FC = () => {
                                                 return <td key={ind}>
                                                     <span className='bold-blue'>Учитель: </span> {lesson.teacher}<br/>
                                                     <span className='bold-green'>Уровень: </span>{lesson.level}<br/>
-                                                    <span className='bold-red'>Ученики: </span>{lesson.numberOfStudents}
+                                                    <span className='bold-red'>Ученики: </span>{lesson.numberOfStudents}<br/>
+                                                    <span>Код группы: </span>{lesson.groupID}
                                                     </td>
                                                 else return <td></td>    
                                             })}
