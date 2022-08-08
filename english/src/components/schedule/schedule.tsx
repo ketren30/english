@@ -1,5 +1,7 @@
 import { time } from 'console';
 import React, { useEffect, useState } from 'react';
+import { isEmptyBindingElement } from 'typescript';
+import './schedule.css';
 
 interface Lesson {
     teacher: string
@@ -37,34 +39,51 @@ export const Schedule: React.FC = () => {
         console.log(timetable);
         }, []);
 
-        const table=
-        <table>
-            
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesdayday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            {timetable.map((item, index)=> {
-                console.log(item);
-                return <>
-                    <tr>
-                        <td colSpan={7}>Classroom №{index+1}</td>
-                    </tr>
-                </>
-                
-        })}
         
-        </table>;
     
-    return (
+    return <>
         <div>
-            <>
-                {loading && <h3>Loading...</h3>}
-                {!loading && timetable.length!==0 && {table}}
-            </>
+            {loading && <h3>Loading...</h3>}
+            {!loading && timetable.length!==0 && 
+                <table className='tablica'>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {timetable.map((item, index)=> {
+                            return <>
+                                <tr>
+                                    <td colSpan={7} key={index} className='header'>Classroom №{index+1}</td>
+                                </tr>
+                                {Object.entries(item).map((elem)=>{
+                                    return (
+                                        <tr>
+                                            <td className='side-header'>{elem[0]}</td>
+                                            {elem[1].map((lesson: Lesson, ind: number)=>{
+                                                if (Object.keys(lesson).length !== 0)
+                                                return <td key={ind}>
+                                                    <span className='bold-blue'>Учитель: </span> {lesson.teacher}<br/>
+                                                    <span className='bold-green'>Уровень: </span>{lesson.level}<br/>
+                                                    <span className='bold-red'>Ученики: </span>{lesson.numberOfStudents}
+                                                    </td>
+                                                else return <td></td>    
+                                            })}
+                                        </tr>
+                                    )
+                                })}
+                            </>                   
+                        })}
+                    </tbody>
+                </table>
+            }
         </div>
-    )
+    </>
 }
