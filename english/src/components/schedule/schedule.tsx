@@ -6,25 +6,18 @@ interface Lesson {
     level: string,
     numberOfStudents: number
 }
-interface Time {
-    Monday: Lesson,
-        Tuesday: Lesson,
-        Wednesday: Lesson,
-        Thursday: Lesson,
-        Friday: Lesson,
-        Saturday: Lesson
-}
+
 interface Classroom {
-    "09-00": Time,
-    "10-00": Time,
-    "11-00": Time,
-    "12-00": Time,
-    "13-00": Time,
-    "14-00": Time,
-    "15-00": Time,
-    "16-00": Time,
-    "17-00": Time,
-    "18-00": Time,
+    "09-00": Lesson[],
+    "10-00": Lesson[],
+    "11-00": Lesson[],
+    "12-00": Lesson[],
+    "13-00": Lesson[],
+    "14-00": Lesson[],
+    "15-00": Lesson[],
+    "16-00": Lesson[],
+    "17-00": Lesson[],
+    "18-00": Lesson[],
 }
 export const Schedule: React.FC = () => {
         const [timetable, setTimetable] = useState<Classroom[]>([]);
@@ -46,35 +39,25 @@ export const Schedule: React.FC = () => {
 
         const table=
         <table>
-            <>
+            
             <th>Time</th>
             <th>Monday</th>
             <th>Tuesday</th>
             <th>Wednesdayday</th>
             <th>Thursday</th>
             <th>Friday</th>
-            <th>Saturdayday</th>
-            {timetable.map((item)=> {
-                <tr>
-                    <td colSpan={7}>{Object.keys(item)[0]}</td>
-                </tr>
-            const classRoom: any = (Object.entries(item)[0][1]);
-            for (var prop in classRoom) {
-                <tr>
-                    <td>
-                        <td>{prop}</td>
-                        <td>
-                            Teacher: {classRoom.prop.Monday.teacher}<br/>
-                            Level: {classRoom.prop.Monday.level}<br/>
-                            Students: {classRoom.prop.Monday.numberOfStudents}
-                        </td>
-                    </td>
-                </tr>
-            }
-
+            <th>Saturday</th>
+            {timetable.map((item, index)=> {
+                console.log(item);
+                return <>
+                    <tr>
+                        <td colSpan={7}>Classroom №{index+1}</td>
+                    </tr>
+                </>
+                
         })}
-        </>
-        </table>
+        
+        </table>;
     
     return (
         <div>
