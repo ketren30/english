@@ -1,8 +1,7 @@
 import * as actionTypes from './actionTypes';
 import * as types from '../type';
 import {store} from '../index'
-//import { useDispatch } from 'react-redux';
-//const dispatch:types.DispatchType=useDispatch();
+import {Dispatch} from 'redux';
 
 export const CheckUser = (user: types.PotUser) => {
     const action: types.MainAction = {
@@ -42,19 +41,43 @@ export const ShowAlert = (alert: string) => {
 }
 
 export function FetchData () {
-    store.dispatch(ShowLoading());
-    const action = fetch('https://raw.githubusercontent.com/ketren30/english/main/english/src/components/schedule/schedule.json')
-            .then((res) => {return res.json().then((result) => {
-                return {type: actionTypes.fetchData, payload: result}}); 
-    })
-    return action
+    return async (dispatch: Dispatch): Promise<void> => {
+        dispatch(ShowLoading());
+
+        const url = 'https://raw.githubusercontent.com/ketren30/english/main/english/src/components/schedule/schedule.json';
+        
+        const action = await fetch(url);
+
+        dispatch({
+            type: actionTypes.fetchData,
+            payload: action,
+        });
+
+        dispatch(HideLoading());
+
+    }
 }
+
     
-
-
 export const ChangeVisibility = () => {
     const action: types.MainAction = {
         type: actionTypes.changeVisibility
+    }
+    return action
+}
+
+export const EditSchedule = (arr: (number|string)[]) => {
+    const action: types.MainAction = {
+        type: actionTypes.editSchedule,
+        payload: arr
+    }
+    return action
+}
+
+export const SendNewLesson = (lesson: types.Lesson) => {
+    const action: types.MainAction = {
+        type: actionTypes.editSchedule,
+        payload: lesson
     }
     return action
 }

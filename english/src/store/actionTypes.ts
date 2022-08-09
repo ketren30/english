@@ -5,3 +5,5 @@ export const hideLoading = 'hideLoading';
 export const showAlert = 'showAlert';
 export const changeVisibility = 'changeVisibility';
 export const fetchData = 'fetchData';
+export const editSchedule = 'editSchedule';
+export const sendNewLesson = 'sendNewLesson';

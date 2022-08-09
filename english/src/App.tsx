@@ -34,7 +34,6 @@ export default function App() {
     if (navData.isActive) return 'activeMenu'
     else return 'menu'
   }
-  console.log(isLogged);
 
 const isShowName = useMemo(() => {
   const menu = 

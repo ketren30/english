@@ -25,12 +25,13 @@ export type ScheduleState = {
     timetable: Classroom[],
     loading: boolean,
     isVisible: boolean
+    changingCell: (number|Keys)[]
 }
 
 export type MainAction = {
     type: string;
     payload?: any 
-}
+} 
 
 export interface Lesson {
     teacher: string
@@ -40,16 +41,21 @@ export interface Lesson {
 }
 
 export interface Classroom {
-    "09-00": Lesson[],
-    "10-00": Lesson[],
-    "11-00": Lesson[],
-    "12-00": Lesson[],
-    "13-00": Lesson[],
-    "14-00": Lesson[],
-    "15-00": Lesson[],
-    "16-00": Lesson[],
-    "17-00": Lesson[],
-    "18-00": Lesson[],
+    ['09-00']: (Lesson|{})[],
+    ['10-00']: (Lesson|{})[],
+    ['11-00']: (Lesson|{})[],
+    ["12-00"]: (Lesson|{})[],
+    ["13-00"]: (Lesson|{})[],
+    ["14-00"]: (Lesson|{})[],
+    ["15-00"]: (Lesson|{})[],
+    ["16-00"]: (Lesson|{})[],
+    ["17-00"]: (Lesson|{})[],
+    ["18-00"]: (Lesson|{})[]
 }
 
- export type DispatchType = (args: MainAction) => MainAction
+export type Keys = keyof Classroom;
+
+type thunkAction = (thunk: (dispath: DispatchType) => void | Promise<void>) => void;
+type standartAction = (args: MainAction) => MainAction;
+
+export type DispatchType = thunkAction | standartAction;

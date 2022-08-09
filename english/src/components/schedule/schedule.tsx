@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './schedule.css';
-import { Lesson, Classroom, DispatchType, ScheduleState } from '../../type';
+import * as types from '../../type';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchData } from '../../store/actionCreators';
+import { FetchData, EditSchedule, ChangeVisibility } from '../../store/actionCreators';
+import { ThunkDispatch } from 'redux-thunk';
+import { time } from 'console';
 
 
 export const Schedule: React.FC = () => {
-        const dispatch: DispatchType = useDispatch();
-        const loading = useSelector((state: ScheduleState)=> state.loading);
-        const timetable = useSelector((state: ScheduleState)=> state.timetable);
+    const dispatch: ThunkDispatch<{}, void, types.MainAction> = useDispatch();
+    const loading = useSelector((state: types.ScheduleState)=> state.loading);
+    const timetable = useSelector((state: types.ScheduleState)=> state.timetable);
+        console.log(timetable);
+        const onCellClick = (array: (number|string)[]) => {
+            dispatch(EditSchedule(array));
+            dispatch(ChangeVisibility());
+        }
 
         useEffect(()=>{
             dispatch(FetchData()); 
@@ -32,7 +39,7 @@ export const Schedule: React.FC = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {timetable.map((item, index)=> {
+                        {timetable.map((item, index: number)=> {
                             return <>
                                 <tr>
                                     <td colSpan={7} key={index} className='header'>Classroom №{index+1}</td>
@@ -41,9 +48,9 @@ export const Schedule: React.FC = () => {
                                     return (
                                         <tr>
                                             <td className='side-header'>{elem[0]}</td>
-                                            {elem[1].map((lesson: Lesson, ind: number)=>{
+                                            {elem[1].map((lesson: types.Lesson, ind: number)=>{
                                                 if (Object.keys(lesson).length !== 0)
-                                                return <td key={ind}>
+                                                return <td key={ind} onClick={()=>onCellClick([index, elem[0], ind])}>
                                                     <span className='bold-blue'>Учитель: </span> {lesson.teacher}<br/>
                                                     <span className='bold-green'>Уровень: </span>{lesson.level}<br/>
                                                     <span className='bold-red'>Ученики: </span>{lesson.numberOfStudents}<br/>
