@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
-import { ScheduleState, MainAction, Lesson, Keys } from '../type';
+import * as types from '../type';
+import { TypedUseSelectorHook } from 'react-redux';
 const initialState = {
     timetable: [],
     loading: false,
@@ -8,39 +9,49 @@ const initialState = {
 }
 
 const scheduleReducer = (
-    state: ScheduleState = initialState,
-    action: MainAction
-): ScheduleState => {
+    state: types.ScheduleState = initialState,
+    action: types.MainAction
+): types.ScheduleState => {
     switch(action.type) {
         case actionTypes.changeVisibility:
-            return {...state, loading: !state.loading}
+            return {...state, isVisible: !state.isVisible}
         case actionTypes.fetchData:
             return {...state, timetable: action.payload}
         case actionTypes.showLoading:
             return {...state, loading: true}
         case actionTypes.hideLoading:
             return {...state, loading: false}
-        case actionTypes.editSchedule:
+        case actionTypes.chooseCell:
             console.log(action.payload)
             return {...state, changingCell: action.payload}
-        /* case actionTypes.sendNewLesson: {
-            const index1 = state.changingCell[0];
-            const index2= +state.changingCell[2];
+        case actionTypes.editSchedule: {
             const newTimetable = state.timetable.map((item, index)=>{
-                if (index===index1) {
-                    for (var prop in item) {
+                if (index===state.changingCell[0]) {
+                    let newClassroom: types.Classroom = {'09-00': [],
+                    '10-00': [],
+                    '11-00': [],
+                    "12-00": [],
+                    "13-00": [],
+                    "14-00": [],
+                    "15-00": [],
+                    "16-00": [],
+                    "17-00": [],
+                    "18-00": []};
+                    var prop: types.Keys 
+                    for (prop in item) {
                         if (prop===state.changingCell[1]) {
-                            item[prop].map((elem: Lesson|{}, ind: number)=>{
-                                if (ind===index2) return action.payload
+                            const newLessons=item[prop].map((elem: types.Lesson|{}, ind: number)=>{
+                                if (ind===state.changingCell[2]) return action.payload
                                 else return elem
-                            })
-                        } else return
-                    }
+                            });
+                            newClassroom[prop] = newLessons
+                        } else newClassroom[prop] = item[prop]
+                    } return newClassroom
                 } else return item
-            })
+            });
             
-            return {...state, timetable: newTimetable} */
-        //}
+            return {...state, timetable: newTimetable} 
+        }
     }
     return state
 }

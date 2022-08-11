@@ -41,16 +41,16 @@ export interface Lesson {
 }
 
 export interface Classroom {
-    ['09-00']: (Lesson|{})[],
-    ['10-00']: (Lesson|{})[],
-    ['11-00']: (Lesson|{})[],
-    ["12-00"]: (Lesson|{})[],
-    ["13-00"]: (Lesson|{})[],
-    ["14-00"]: (Lesson|{})[],
-    ["15-00"]: (Lesson|{})[],
-    ["16-00"]: (Lesson|{})[],
-    ["17-00"]: (Lesson|{})[],
-    ["18-00"]: (Lesson|{})[]
+    '09-00': (Lesson|{})[],
+    '10-00': (Lesson|{})[],
+    '11-00': (Lesson|{})[],
+    "12-00": (Lesson|{})[],
+    "13-00": (Lesson|{})[],
+    "14-00": (Lesson|{})[],
+    "15-00": (Lesson|{})[],
+    "16-00": (Lesson|{})[],
+    "17-00": (Lesson|{})[],
+    "18-00": (Lesson|{})[]
 }
 
 export type Keys = keyof Classroom;

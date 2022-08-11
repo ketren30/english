@@ -14,8 +14,8 @@ export const Enter = () => {
     const [error, setError] = useState<string>('');
     const dispatch: Dispatch<any> = useDispatch();
     const navigate = useNavigate();
-    const isLogged: boolean = useSelector((state: types.LogState)=> state.isLogged);
-    const loggedUser: types.User | undefined = useSelector((state: types.LogState) => state.activeUser);
+    const isLogged: boolean = useSelector((state: types.MainState)=> state.logging.isLogged);
+    const loggedUser: types.User | undefined = useSelector((state: types.MainState) => state.logging.activeUser);
     
     const onLoginChange = (event: React.FormEvent<HTMLInputElement>) => {
         setPotentialUserLogin(event.currentTarget.value)

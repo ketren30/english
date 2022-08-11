@@ -28,8 +28,8 @@ import {
 export default function App() {
   const dispatch: types.DispatchType = useDispatch();
   const navigate = useNavigate();
-  const isLogged: boolean = useSelector((state: types.LogState) => state.isLogged);
-  const LoggedUser: types.User| undefined = useSelector((state: types.LogState) => state.activeUser);
+  const isLogged: boolean = useSelector((state: types.MainState) => state.logging.isLogged);
+  const LoggedUser: types.User| undefined = useSelector((state: types.MainState) => state.logging.activeUser);
   const getClassName = (navData: any) => {
     if (navData.isActive) return 'activeMenu'
     else return 'menu'

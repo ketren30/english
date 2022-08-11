@@ -13,9 +13,10 @@
 .tablica th:nth-child(n+2) {
     width: 16%;
 }
-.tablica th, td {
+.tablica th, td, .active-td {
     border: 1px solid #524f4e;
     text-align: center;
+    cursor: default;
 }
 .bold-blue, .bold-green, .bold-red {
     font-weight: 600;
@@ -41,4 +42,7 @@
     position: sticky;
     top: 0;
     background: white;
-  }
+}
+.active-td {
+    background-color: #fdb5a88f;
+}

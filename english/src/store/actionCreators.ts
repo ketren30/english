@@ -46,7 +46,7 @@ export function FetchData () {
 
         const url = 'https://raw.githubusercontent.com/ketren30/english/main/english/src/components/schedule/schedule.json';
         
-        const action = await fetch(url);
+        const action = await (await fetch(url)).json();
 
         dispatch({
             type: actionTypes.fetchData,
@@ -66,15 +66,15 @@ export const ChangeVisibility = () => {
     return action
 }
 
-export const EditSchedule = (arr: (number|string)[]) => {
+export const ChooseCell = (indexes: (number|string)[]) => {
     const action: types.MainAction = {
-        type: actionTypes.editSchedule,
-        payload: arr
+        type: actionTypes.chooseCell,
+        payload: indexes
     }
     return action
 }
 
-export const SendNewLesson = (lesson: types.Lesson) => {
+export const EditSchedule = (lesson: types.Lesson) => {
     const action: types.MainAction = {
         type: actionTypes.editSchedule,
         payload: lesson
