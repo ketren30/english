@@ -8,3 +8,4 @@ export const fetchSchedule = 'fetchSchedule';
 export const editSchedule = 'editSchedule';
 export const chooseCell = 'chooseCell';
 export const fetchNews = "fetchNews";
+export const addNews = 'addNews';

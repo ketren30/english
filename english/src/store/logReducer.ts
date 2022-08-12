@@ -61,7 +61,6 @@ const logReducer = (
                     state.activeUser=item;
                     state.isLogged=true;
                 }
-                console.log(state.isLogged)
                 return item
             });
             return state

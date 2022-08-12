@@ -62,8 +62,7 @@ export interface Classroom {
 export type Keys = keyof Classroom;
 
 export interface News {
-    header: string,
-    time: string,
+    date: string,
     photos: string[],
     text: string
 }

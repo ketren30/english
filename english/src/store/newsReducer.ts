@@ -13,7 +13,6 @@ const newsReducer = (
 ):NewsState => {
     switch (action.type) {
         case actionTypes.fetchNews: 
-        console.log(action.payload)
             return {...state, news: action.payload}
         case actionTypes.changeVisibility:
             return {...state, isVisible: !state.isVisible}
@@ -21,6 +20,9 @@ const newsReducer = (
             return {...state, loading: true}
         case actionTypes.hideLoading:
             return {...state, loading: false}
+        case actionTypes.addNews:
+            const news1 = state.news.concat(action.payload)
+            return {...state, news: news1}
     }
     return state
 }

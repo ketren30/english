@@ -17,6 +17,7 @@
     border-radius: 10px;
 }
 .news-wrapper {
+    width: 100%;
     border: 1px solid #506CF0;
     background-color: #a7c0cd6b;
     border-radius: 15px;
@@ -26,4 +27,9 @@
 }
 .news-wrapper .swiper-button-prev, .swiper-button-next {
     color: #fe78608f;
+}
+.head-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }

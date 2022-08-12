@@ -30,7 +30,6 @@ export const Enter = () => {
 
     const onButtonClick = () => {
         dispatch(CheckUser({login: potentialUserLogin, password: potentialUserPasswword}));
-        console.log(isLogged);
         if (!isLogged) setError("Логин или пароль неверны! Попытайтесь еще раз.")
         else { 
             setError('');

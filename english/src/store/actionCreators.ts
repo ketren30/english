@@ -98,3 +98,11 @@ export function FetchNews () {
 
     }
 }
+
+export const AddNews = (news: types.News) => {
+    const action: types.MainAction = {
+        type: actionTypes.addNews,
+        payload: news
+    }
+    return action
+}
