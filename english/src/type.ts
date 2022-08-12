@@ -12,7 +12,8 @@ export interface User {
 }
 export interface MainState {
     logging: LogState,
-    schedule: ScheduleState
+    schedule: ScheduleState,
+    news: NewsState
 }
 
 export type LogState = {
@@ -28,6 +29,11 @@ export type ScheduleState = {
     changingCell: (number|Keys)[]
 }
 
+export type NewsState = {
+    news: News[],
+    loading: boolean,
+    isVisible: boolean
+}
 export type MainAction = {
     type: string;
     payload?: any 

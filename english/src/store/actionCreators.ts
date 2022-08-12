@@ -1,6 +1,5 @@
 import * as actionTypes from './actionTypes';
 import * as types from '../type';
-import {store} from '../index'
 import {Dispatch} from 'redux';
 
 export const CheckUser = (user: types.PotUser) => {
@@ -40,7 +39,7 @@ export const ShowAlert = (alert: string) => {
     return action
 }
 
-export function FetchData () {
+export function FetchSchedule () {
     return async (dispatch: Dispatch): Promise<void> => {
         dispatch(ShowLoading());
 
@@ -49,7 +48,7 @@ export function FetchData () {
         const action = await (await fetch(url)).json();
 
         dispatch({
-            type: actionTypes.fetchData,
+            type: actionTypes.fetchSchedule,
             payload: action,
         });
 
@@ -80,4 +79,22 @@ export const EditSchedule = (lesson: types.Lesson) => {
         payload: lesson
     }
     return action
+}
+
+export function FetchNews () {
+    return async (dispatch: Dispatch): Promise<void> => {
+        dispatch(ShowLoading());
+
+        const url = 'https://raw.githubusercontent.com/ketren30/english/main/english/src/components/news/news.json';
+        
+        const action = await (await fetch(url)).json();
+
+        dispatch({
+            type: actionTypes.fetchNews,
+            payload: action,
+        });
+
+        setTimeout(()=>dispatch(HideLoading()), 1500);
+
+    }
 }

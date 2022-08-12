@@ -15,7 +15,7 @@ const scheduleReducer = (
     switch(action.type) {
         case actionTypes.changeVisibility:
             return {...state, isVisible: !state.isVisible}
-        case actionTypes.fetchData:
+        case actionTypes.fetchSchedule:
             return {...state, timetable: action.payload}
         case actionTypes.showLoading:
             return {...state, loading: true}

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './schedule.css';
 import * as types from '../../type';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchData, ChooseCell, ChangeVisibility } from '../../store/actionCreators';
+import { FetchSchedule, ChooseCell, ChangeVisibility } from '../../store/actionCreators';
 import { ThunkDispatch } from 'redux-thunk';
 import { Modal } from './modal/modal';
 
@@ -32,7 +32,7 @@ export const Schedule: React.FC = () => {
     }
     
     useEffect(()=>{
-        dispatch(FetchData()); 
+        dispatch(FetchSchedule()); 
     }, [dispatch]);
 
     const handleClassName = (ind1:number, ind2: string, ind3:number) => {
