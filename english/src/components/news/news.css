@@ -1,0 +1,13 @@
+.swiper {
+    width: 600px;
+    height: 150px;
+}
+.swiper-slide {
+    width: 200px;
+    height: 150px;
+}
+.thumbs-image {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}

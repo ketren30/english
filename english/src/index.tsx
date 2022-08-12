@@ -6,10 +6,20 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, Store, Middleware, Dispatch, AnyAction} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './store/rootReducer';
-import * as types from './type';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
+import { loadingBarMiddleware } from 'react-redux-loading-bar'
 import { BrowserRouter as Router } from "react-router-dom";
 
-export const store = createStore(rootReducer, applyMiddleware(thunk as Middleware<{}, unknown, Dispatch<AnyAction>>));
+const composeEnhancers = composeWithDevTools({})
+
+export const store = createStore(rootReducer, 
+  composeEnhancers(
+    applyMiddleware(
+      loadingBarMiddleware(),
+      thunk as Middleware<{}, unknown, Dispatch<AnyAction>>
+    )
+  )
+);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

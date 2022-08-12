@@ -8,10 +8,9 @@ const initialState: NewsState = {
 }
 
 const newsReducer = (
-    state: NewsState,
+    state: NewsState = initialState,
     action: MainAction
 ):NewsState => {
-    state = initialState;
     switch (action.type) {
         case actionTypes.fetchNews: 
         console.log(action.payload)

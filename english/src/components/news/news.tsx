@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from 'swiper';
 import { ThunkDispatch } from 'redux-thunk';
 import { FetchNews } from '../../store/actionCreators';
+import './news.css';
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
@@ -24,14 +25,15 @@ export const News: React.FC = () => {
             <div className='news-wrapper' key={i}><>
                 <h3>{elem.header}</h3>
                 <p>{elem.text}</p>
-                <Swiper
+                <Swiper className='swiper1'
+                    navigation
                     id="thumbs"
                     spaceBetween={5}
                     slidesPerView={3}
                 >
                     {elem.photos.map((item, index: number)=> {
                         return <SwiperSlide key={`slide-${index}`} tag="li">
-                                   <img src={item} alt={`Slide ${index+1}`}/>
+                                   <img className='thumbs-image' src={item} alt={`Slide ${index+1}`}/>
                         </SwiperSlide> })}      
                 </Swiper>
             </></div>
