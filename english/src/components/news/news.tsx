@@ -17,18 +17,17 @@ export const News: React.FC = () => {
     const loading = useSelector((state: types.MainState) => state.news.loading);
     const [isAdding, setIsAdding] = useState(false);
     const [currentNews, setCurrentNews] = useState<string>('');
-    console.log((new Date(2022, 4, 30)).toString());
+    
     useEffect(()=> {
         dispatch(FetchNews());
     }, [dispatch]);
 
-    const onSUbmit = () => {
+    const onSubmit = () => {
         const news = {
             date: (new Date(2022, 4, 30)).toString(),
             photos: [],
             text: currentNews
         }
-        console.log((new Date).toString());
         setIsAdding(false);
         dispatch(AddNews(news))
     }
@@ -40,7 +39,7 @@ export const News: React.FC = () => {
                     <h3>{elem.date.slice(0, 16)}</h3>
                 </div>
                 <p>{elem.text}</p>
-                <Swiper className='swiper1'
+                {elem.photos.length!==0 && <Swiper className='swiper1'
                     navigation
                     id="thumbs"
                     spaceBetween={5}
@@ -50,7 +49,7 @@ export const News: React.FC = () => {
                         return <SwiperSlide key={`slide-${index}`} tag="li">
                                    <img className='thumbs-image' src={item} alt={`Slide ${index+1}`}/>
                         </SwiperSlide> })}      
-                </Swiper>
+                </Swiper>}
             </></div>
         )
     })
@@ -58,11 +57,13 @@ export const News: React.FC = () => {
     return <>
         {loading? <h3>Loading...</h3>
             :<> 
-            {isLogged && !isAdding && <button onClick = {()=>setIsAdding(true)}>Добавить новость</button>}
-            {isAdding && <>
-                <input onChange={(e)=>setCurrentNews(e.currentTarget.value)}/>
-                <button onClick={()=>onSUbmit()}>Сохранить</button>
-            </>}
+            {isLogged && !isAdding && <button 
+            className='submitButton' 
+            onClick = {()=>setIsAdding(true)}>Добавить новость</button>}
+            {isAdding && <div>
+                <input className='news-input' onChange={(e)=>setCurrentNews(e.currentTarget.value)}/>
+                <button className='submitButton' disabled={currentNews===''} onClick={()=>onSubmit()}>Сохранить</button>
+            </div>}
 
             {ourNews}
         </>}
