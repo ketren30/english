@@ -23,7 +23,8 @@ export const News: React.FC = () => {
     const ourNews = news.map((elem: types.News, i: number)=>{
         return (
             <div className='news-wrapper' key={i}><>
-                <h3>{elem.header}</h3>
+                <h2>{elem.header}</h2>
+                <h3></h3>
                 <p>{elem.text}</p>
                 <Swiper className='swiper1'
                     navigation
